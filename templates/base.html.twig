@@ -29,10 +29,12 @@
             <a class="navbar-brand" href="{{path('home')}}">Bucket List</a>
             <div class="d-flex" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="{{path('about-us')}}">About Us</a>
-                    <a class="nav-link" href="{{path('wish-list')}}">Wish List</a>
-                    <a class="nav-link disabled">Disabled</a>
+                    <a class="nav-link {{ app.request.get('_route') == 'home' ? 'active' }}" aria-current="page"
+                        href="{{path('home')}}">Home</a>
+                    <a class="nav-link {{ app.request.get('_route') == 'about-us' ? 'active' }}"
+                        href="{{path('about-us')}}">About Us</a>
+                    <a class="nav-link {{ app.request.get('_route') == 'wish-list' ? 'active' }}"
+                        href="{{path('wish-list')}}">Wish List</a>
                 </div>
             </div>
         </div>
