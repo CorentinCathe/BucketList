@@ -1,2 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block body %}
+{% for item in wishList %}
+<ul>
+    <li><a href="{{path('details', {id:item.id})}}">{{item.title}}</a></li>
+</ul>
+{% endfor %}
+{% endblock body %}
