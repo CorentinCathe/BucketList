@@ -1,21 +1,21 @@
 .footer-basic {
-    padding:40px 0;
-    background-color:#ffffff;
-    color:#4b4c4d;
-  }
+  padding: 40px 0;
+  background-color: #dfdfdf;
+  color: #4b4c4d;
+}
 
 .footer-basic .copyright {
-    margin-top:15px;
-    text-align:center;
-    font-size:13px;
-    color:#aaa;
-    margin-bottom:0;
-  }
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 0;
+}
 
-.navbar-brand{
+.navbar-brand {
   font-size: 25pt !important;
 }
 
-.navbar-nav{
+.navbar-nav {
   font-size: 15pt !important;
 }
