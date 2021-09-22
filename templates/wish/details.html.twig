@@ -1,11 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<ul>
 
-    <li>{{wish.title}}</li>
-    <li>{{wish.description}}</li>
-    <li>{{wish.author}}</li>
-    <li>{{wish.dateCreated | date("m/d/Y")}}</li>
-</ul>
+<h1>{{wish.title}}</h1>
+<p>{{wish.description}}</p>
+<h2>{{wish.author}}</h2>
+<p>{{wish.dateCreated | date("m/d/Y")}}</p>
+<a href="{{path('remove', {id:wish.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
 {% endblock body %}

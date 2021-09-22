@@ -19,3 +19,7 @@
 .navbar-nav {
   font-size: 15pt !important;
 }
+
+.content {
+  margin: 1% 10%;
+}
