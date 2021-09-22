@@ -1,9 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{% for item in wishList %}
-<ul>
-    <li><a href="{{path('details', {id:item.id})}}">{{item.title}}</a></li>
-</ul>
-{% endfor %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">
+                #
+            </th>
+            <th scope="col">
+                Voeux
+            </th>
+            <th scope="col">
+                details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in wishList %}
+        <tr>
+            <th scope="row">
+                {{ loop.index }}
+            </th>
+            <td>
+                {{item.title}}
+            </td>
+            <td>
+                <a href="{{path('details', {id:item.id})}}" class="btn btn-primary">details</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{path('add')}}" class="btn btn-success">+</a>
+
 {% endblock body %}
