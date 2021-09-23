@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Modifier un voeux</h1>
+{{form_start(formWish)}}
+{{form_widget(formWish)}}
+<button type="submit" class="btn btn-success"><i class="fa fa-edit"></i></button>
+{{form_end(formWish)}}
+{% endblock body %}

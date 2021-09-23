@@ -5,6 +5,11 @@
 <h1>{{wish.title}}</h1>
 <p>{{wish.description}}</p>
 <h2>{{wish.author}}</h2>
+<h3>
+    {% if wish.category %}
+    {{wish.category.name}}
+    {% endif %}
+</h3>
 <p>{{wish.dateCreated | date("m/d/Y")}}</p>
 <a href="{{path('remove', {id:wish.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
 {% endblock body %}

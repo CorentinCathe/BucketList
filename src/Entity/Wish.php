@@ -28,11 +28,6 @@ class Wish
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $author;
-
-    /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $isPublished;
@@ -41,6 +36,17 @@ class Wish
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateCreated;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="wishes")
+     */
+    private $category;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $author;
+
 
     public function getId(): ?int
     {
@@ -71,17 +77,6 @@ class Wish
         return $this;
     }
 
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(string $author): self
-    {
-        $this->author = $author;
-
-        return $this;
-    }
 
     public function getIsPublished(): ?bool
     {
@@ -103,6 +98,30 @@ class Wish
     public function setDateCreated(?\DateTimeInterface $dateCreated): self
     {
         $this->dateCreated = $dateCreated;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(string $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }
